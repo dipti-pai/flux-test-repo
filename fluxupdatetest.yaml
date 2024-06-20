@@ -23,7 +23,8 @@ spec:
         kind: HelmRepository
         name: podinfo
       interval: 1m
-      valuesFiles: values.yaml
+      valuesFiles: 
+        - values.yaml
   values:
     fullnameOverride: mypodinfo
   postRenderers:
@@ -34,11 +35,8 @@ spec:
           version: v1
           kind: Deployment
           name: mypodinfo
-        patch:
+        patch: |-
         - op: add
           path: /metadata/labels/yyyy
           value: wwww
-        - op: add
-          path: /metadata/labels/xxxx
-          value: zzzz
           
