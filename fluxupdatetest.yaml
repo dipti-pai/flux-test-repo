@@ -23,20 +23,25 @@ spec:
         kind: HelmRepository
         name: podinfo
       interval: 1m
-      valuesFiles:
-        - values.yaml
+      valuesFile: values.yaml
   values:
     fullnameOverride: mypodinfo
   postRenderers:
-  - kustomize:
-      patches:
+  - kustomize: 
+      patchesStrategicMerge:
+      - kind: Deployment
+        apiVersion: apps/v1
+        metadata:
+          name: mypodinfo
+          labels:
+            xxxx: yyyy
+      patchesJson6902:
       - target:
           group: apps
           version: v1
           kind: Deployment
           name: mypodinfo
-        patch: |-
-          - op: add
-            path: /metadata/labels/xxxx
-            value: yyyy
-          
+        patch:
+        - op: add
+          path: /metadata/labels/yyyy
+          value: xxxx
