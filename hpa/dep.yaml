@@ -5,6 +5,7 @@ metadata:
   namespace: hpa
   labels:
     app: nginx
+    hpa: "true"
 spec:
   replicas: 2
   selector:
