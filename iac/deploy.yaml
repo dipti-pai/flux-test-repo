@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: podinfod
-          image: dpacr1.azurecr.io/podinfo:5.0.1 # {"$imagepolicy": "default:podinfo-policy"}
+          image: dpacr1.azurecr.io/podinfo:5.0.13 # {"$imagepolicy": "default:podinfo-policy"}
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
