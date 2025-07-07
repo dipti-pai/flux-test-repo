@@ -4,7 +4,7 @@ metadata:
   name: podinfo
   namespace: fluxconfig
 spec:
-  interval: 5m
+  interval: 1m
   url: https://github.com/stefanprodan/podinfo
   ref:
     branch: master
@@ -15,7 +15,7 @@ metadata:
   name: podinfo
   namespace: fluxconfig
 spec:
-  interval: 10m
+  interval: 1m
   targetNamespace: default
   sourceRef:
     kind: GitRepository
